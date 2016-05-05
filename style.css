@@ -1,3 +1,76 @@
 body {
-    background-color: #333333;
+    background-color: #315657;
+}
+
+.box-word {
+   color: #fff;
+   text-align: center;
+   margin-top: 45%;  
+}
+
+.underline {
+   padding: 0 17px;
+   border-bottom: 2px solid #fff;
+}
+
+.box-description {
+    color: #fff;
+    text-align: center;
+    text-align: justify; 
+    padding-left: 11%;
+    padding-right: 11%;
+ }  
+    
+.rules{
+  color: #fff;
+  text-align: center;
+  margin-top: 45%;
+}
+
+.rules-description {
+    color: #fff;
+    text-align: center;
+    text-align: justify; 
+    padding-left: 32%;
+    padding-right: 11%;
+}
+
+.impressum {
+  color: #fff;
+  text-align: center;
+  margin-top: 15%;
+}
+
+.impressum-title {
+     color: #fff;
+    text-align: center;
+    text-align: justify; 
+    padding-left: 45%;
+    padding-right: 11%;
+}
+
+.impressum-description {
+     color: #fff;
+    text-align: center;
+    text-align: justify; 
+    padding-left: 45%;
+    padding-right: 11%;
+}
+
+.navigation {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: red;
+    width: 100%;
+}
+
+.navigation .navigation-element {
+    display: block;
+    float: left;
+    width: 50%;
+}
+
+.navigation .navigation-element:last-child {
+    text-align: right;
 }
