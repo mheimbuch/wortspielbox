@@ -1,0 +1,22 @@
+{
+  "name": "wortspielbox",
+  "version": "1.0.0",
+  "description": "Eloquente Webapp",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mheimbuch/wortspielbox.git"
+  },
+  "author": "Marlis & Alexander Heimbuch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mheimbuch/wortspielbox/issues"
+  },
+  "homepage": "https://github.com/mheimbuch/wortspielbox#readme",
+  "devDependencies": {
+    "concat-cli": "^4.0.0"
+  }
+}
