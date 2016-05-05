@@ -1,0 +1,38 @@
+{
+  "name": "wortspielbox",
+  "version": "1.0.0",
+  "description": "Eloquente Webapp",
+  "main": "index.html",
+  "scripts": {
+    "clean": "rm -r dist/*",
+    "build:dist": "mkdir -p dist/",
+    "build:js": "npm run build:dist && uglifyjs node_modules/rivets/dist/rivets.bundled.min.js node_modules/zepto/zepto.min.js source/scripts/words.js source/scripts/logic.js -c -o dist/scripts.js",
+    "build:css": "npm run build:dist && cleancss -r source/ -o dist/styles.css node_modules/normalize.css/normalize.css source/style.css",
+    "build:html": "npm run build:dist && html-minifier --collapse-whitespace -o dist/index.html source/index.html",
+    "build:assets": "npm run build:dist && cp -R source/icons dist/ && cp -R source/fonts dist/",
+    "dist": "npm run clean && npm run build:js && npm run build:css && npm run build:html && npm run build:assets",
+    "publish": "npm run dist && surge -p dist/ -d wortspielbox.surge.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mheimbuch/wortspielbox.git"
+  },
+  "author": "Marlis & Alexander Heimbuch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mheimbuch/wortspielbox/issues"
+  },
+  "homepage": "https://github.com/mheimbuch/wortspielbox#readme",
+  "devDependencies": {
+    "autoprefixer": "6.3.6",
+    "clean-css": "3.4.12",
+    "html-minifier": "2.1.2",
+    "surge": "^0.18.0",
+    "uglify-js": "2.6.2"
+  },
+  "dependencies": {
+    "normalize.css": "4.1.1",
+    "rivets": "0.8.1",
+    "zepto": "1.0.1"
+  }
+}
