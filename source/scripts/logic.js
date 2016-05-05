@@ -3,8 +3,8 @@
         appData = {
             box: {},
             nav: {
-                home: false,
-                imprint: true,
+                home: true,
+                imprint: false,
                 rules: false
             },
             loaded: false
