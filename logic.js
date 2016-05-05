@@ -3,10 +3,11 @@
         appData = {
             box: {},
             nav: {
-                word: true,
-                imprint: false,
+                home: false,
+                imprint: true,
                 rules: false
-            }
+            },
+            loaded: false
         };
     
     var currentDay = function () {
@@ -51,15 +52,20 @@
         return apiObj.parse.displaytitle;
     };
     
-    var dictData = function (reference) {       
+    var dictData = function (reference, cb) {       
         return function (apiObj, err) {
             reference.word = parseWord(apiObj);
             reference.meaning = parseMeaning(apiObj);
+            cb();
         }
     };
     
     var initApp = function () {
-        $.get(dictUrl(WORDS[currentDay()]), dictData(appData.box));
+        $.get(dictUrl(WORDS[currentDay()]), dictData(appData.box, function () {
+            setTimeout(function () {
+                appData.loaded = true;
+            }, 1000);
+        }));
     };
     
     var toggleNav = function (state) {
@@ -72,6 +78,7 @@
     
     $('#impressum-toggle').on('click', toggleNav('imprint'));
     $('#rules-toggle').on('click', toggleNav('rules'));
+    $('#home-toggle').on('click', toggleNav('home'));
     
     rivets.bind(app.get(), {app: appData});
     initApp();
